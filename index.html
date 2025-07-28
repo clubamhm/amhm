@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -6,7 +7,6 @@
   <title>Club AMHM</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <style>
-    /* ... your existing styles unchanged ... */
     * {
       box-sizing: border-box;
       scroll-behavior: smooth;
@@ -30,7 +30,6 @@
     header img {
       width: 100%;
       height: auto;
-      max-height: none;
       object-fit: contain;
       display: block;
       border-bottom: 4px solid #333;
@@ -88,18 +87,33 @@
       margin-top: 3rem;
     }
 
-    .gallery img {
-      width: 100%;
-      max-width: 300px;
-      margin: 1rem auto;
-      display: block;
+    .gallery-row {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+
+    .gallery-row img {
+      width: 60%;
+      max-width: 180px;
       border-radius: 8px;
       cursor: pointer;
       transition: transform 0.2s;
     }
 
-    .gallery img:hover {
+    .gallery-row img:hover {
       transform: scale(1.03);
+    }
+
+    .gallery img {
+      width: 60%;
+      max-width: 180px;
+      margin: 1rem auto;
+      display: block;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.2s;
     }
 
     dialog::backdrop {
@@ -129,11 +143,19 @@
       section {
         padding: 1.5rem;
       }
+
+      .gallery-row {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .gallery-row img {
+        width: 90%;
+      }
     }
   </style>
 </head>
 <body>
-
   <header>
     <img src="https://i.imgur.com/3Pdkx97.jpeg" alt="Club AMHM" />
   </header>
@@ -145,13 +167,11 @@
       </p>
     </section>
 
-    <div class="gallery">
+    <div class="gallery-row">
       <img src="https://i.imgur.com/8b6ktfX.jpeg" alt="Exercice du carré de meyer, datant de 1570" onclick="openImage(this.src)">
-    </div>
-    
-    <div class="gallery">
       <img src="https://i.imgur.com/rS8e9F6.jpeg" alt="Demi dent de sanglier, Fiore 15e siècle" onclick="openImage(this.src)">
     </div>
+
     <section>
       <p>
         Nous sommes un club de 
